@@ -1,0 +1,21 @@
+name: ci-workflow
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+jobs:
+   first_job:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Welcome Step
+        run: echo "welcome to Github Actions"
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Repository Basic Info
+        run:  |
+          echo "Repository Name: ${{github.repository}}"
+          echo "Repository Owner: ${{github.owner}}"
+
